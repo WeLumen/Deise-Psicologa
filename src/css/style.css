@@ -96,7 +96,7 @@ body {
   padding: 10px 22px;
   border-radius: 6px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 500;
   font-family: 'Cormorant Infant', serif;
   transition: 0.3s;
@@ -143,7 +143,7 @@ body {
 
 .hero-text h1 {
   font-family: 'Cormorant Infant', serif;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 450;
   line-height: 1.4;
   color: var(--text-main);
@@ -152,7 +152,7 @@ body {
 
 .hero-text p {
   font-family: 'Cormorant SC', serif;
-  font-size: 20px;
+  font-size: 15px;
   color: var(--text-secondary);
 }
 
@@ -257,7 +257,7 @@ body {
 .atuacao h2 {
   text-align: center;
   font-family: 'Cormorant SC', serif;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   color: var(--text-main);
   margin-bottom: 3rem;
@@ -269,28 +269,35 @@ body {
   margin-top: 20px;
 }
 .card {
-  position: relative; /* necessário para a pontinha */
+  position: relative;
   background: var(--bg-body);
-  border-radius: 20px; /* deixa mais arredondado igual a imagem */
-  padding: 12px 14px; /* menor */
+  border-radius: 20px;
+  padding: 12px 14px;
   text-align: center;
-  border-left: 8px solid var(--text-hover); /* borda verde */
+  border-left: 8px solid var(--text-hover);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
 
-/* efeito da pontinha do balão */
+/* Pontinha EMBAIXO (balão de fala) */
 .card::after {
   content: "";
   position: absolute;
-  right: -12px; /* desloca para fora */
-  bottom: 20px; /* posição vertical da pontinha */
+  bottom: 1px; /* ajusta altura para sair da quina */
+  right: -8px; /* empurra para fora do card */
   width: 0;
   height: 0;
-  border-left: 12px solid var(--bg-body); /* cor do fundo do card */
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
+
+  border-top: 10px solid transparent;  
+  border-bottom: 10px solid transparent;
+  border-left: 12px solid var(--bg-body); /* cor da pontinha */
+  transform: rotate(20deg); /* inclinação igual à imagem */
 }
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
 
 .card:hover {
   transform: translateY(-5px);
@@ -321,20 +328,20 @@ body {
 }
 
 .card p {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: var(--text-secondary);
-  text-align:left;
+  text-align:center;
   margin-bottom: 1rem;
 }
-
-
-
-
 /* SEÇÃO PSICOTERAPIA ONLINE */
 .online {
   background: var(--bg-hero);
   padding: 4rem 2rem;
+  min-height: 100vh;   /* ↳ faz ocupar a tela inteira */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* ↳ centraliza conteúdo verticalmente */
 }
 
 .online-label {
@@ -709,102 +716,30 @@ body {
   background-color: #C5E5B9;
 }
 
-.artigo-burnout-container {
-  max-width: 800px;
-  margin: 40px auto;
-  /* Centraliza o artigo na página */
-  padding: 30px;
-  background-color: var(--btn-text);
-  /* Fundo branco para a área de conteúdo */
-  border: 1px solid var(--bg-hero);
-  /* Borda suave */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  /* Sombra sutil */
-  font-family: var(--fonte-texto);
-  color: var(--cor-texto);
-  line-height: 1.7;
-  /* Bom espaçamento entre linhas */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 65px;
+  height: 65px;
+  background: #29a71a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* TÍTULO PRINCIPAL (H2) */
-.artigo-titulo-principal {
-  font-family: var(--btn-hover);
-  font-size: 2.2em;
-  font-weight: bold;
-  color: var(--text-secondary);
-  text-align: center;
-  margin-bottom: 25px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid var(--btn-hover);
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
 }
 
-/* SUBTÍTULOS (H3) */
-.artigo-subtitulo {
-  font-family: var(--fonte-serifa);
-  font-size: 1.6em;
-  color: var(--btn-hover);
-  margin-top: 35px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-/* PARÁGRAFOS DE TEXTO CORRIDO */
-.artigo-texto-paragrafo {
-  font-size: 1em;
-  margin-bottom: 20px;
-  text-align: justify;
-}
-
-/* ÊNFASE DENTRO DO TEXTO (usando a tag <strong>) */
-.artigo-texto-paragrafo strong {
-  font-weight: bold;
-  color: var(--text-default);
-}
-
-/* LISTA DE SINTOMAS */
-.artigo-lista-sintomas {
-  list-style: none;
-  /* Remove os marcadores padrão */
-  padding-left: 0;
-  margin-bottom: 25px;
-}
-
-.artigo-lista-sintomas li {
-  position: relative;
-  padding-left: 25px;
-  /* Espaço para o marcador customizado */
-  margin-bottom: 10px;
-}
-
-/* Marcador customizado para a lista de sintomas */
-.artigo-lista-sintomas li::before {
-  content: "•";
-  /* Usa um ponto como marcador */
-  position: absolute;
-  left: 0;
-  color: var(--btn-hover);
-  /* Cor do marcador */
-  font-size: 1.2em;
-  line-height: 1;
-}
-
-/* ALERTA DE AJUDA */
-.artigo-alerta-ajuda {
-  font-size: 1.1em;
-  font-weight: bold;
-  color: var(--cor-alerta);
-  text-align: center;
-  padding: 15px;
-  margin: 30px 0;
-  border: 2px solid var(--cor-alerta);
-  background-color: var(--bg-body);
-}
-
-/* PARÁGRAFO FINAL */
-.artigo-texto-final {
-  font-style: italic;
-  padding-top: 15px;
-  border-top: 1px dashed var(--border-navbar);
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 /* --- Estilos Gerais do Rodapé --- */
@@ -1074,7 +1009,7 @@ footer {
 .legal-content h1,
 .privacy-policy h1 {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-family: "Cormorant SC", serif;
   color: var(--text-hover);
@@ -1084,7 +1019,7 @@ footer {
 .update,
 .privacy-policy .update {
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   margin-bottom: 2rem;
   color: var(--btn-hover);
 }
@@ -1092,8 +1027,8 @@ footer {
 /* ===== SUBTÍTULOS ===== */
 .legal-content h2,
 .privacy-policy h2 {
-  margin-top: 2.5rem;
-  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
   font-family: "Cormorant SC", serif;
   color: var(--text-hover);
 }
@@ -1131,81 +1066,102 @@ footer {
 }
 
 /* ===== RESPONSIVO ===== */
-@media (max-width: 768px) {
-  .legal-content,
-  .privacy-policy .container {
-    padding: 2rem;
+@media (min-width: 1600px) {
+  .container,
+  .hero-container,
+  .legal-content {
+    max-width: 1400px;
   }
 
-  .legal-content h1,
-  .privacy-policy h1 {
-    font-size: 1.8rem;
+  .hero-text h1 {
+    font-size: 48px;
   }
 
-  .legal-content h2,
-  .privacy-policy h2 {
-    font-size: 1.2rem;
+  .hero-text p {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: 20px 25px;
+  }
+
+  .cards {
+    gap: 30px;
   }
 }
 
-
-/* Responsividade */
-/* --- AJUSTES PARA MONITORES GRANDES --- */
 @media (min-width: 1440px) {
+
   .navbar {
-    padding: 30px 100px; /* mais espaçamento lateral */
+    padding: 30px 100px;
   }
 
   .logo img {
-    height: 170px; /* ligeiro aumento da logo */
+    height: 170px;
   }
 
   .nav-links {
-    gap: 50px; /* aumenta o espaço entre os links */
+    gap: 50px;
   }
 
   .nav-links a {
-    font-size: 22px; /* aumenta o tamanho da fonte */
+    font-size: 22px;
   }
 }
+
+/* ===========================================================
+   NOTEBOOKS / TABLETS GRANDES (até 1024px)
+   =========================================================== */
+   @media (max-width: 1366px) {
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .cards {
+    gap: 20px;
+  }
+}
+
 @media (max-width: 1024px) {
- /* Navbar geral */
+
   .navbar {
-    padding: 10px 30px; /* menos padding lateral */
+    padding: 10px 30px;
   }
 
   .logo img {
-    height: 65px; /* logo menor */
+    height: 65px;
   }
 
-  /* Menu */
   .nav-links {
-    gap: 13px; /* menos espaço entre itens */
+    gap: 13px;
   }
 
   .nav-links a {
-    gap: 18px; /* dá mais respiro sem quebrar */
-    flex: 1; /* ocupa o espaço disponível */
-    justify-content: center; /* espalha os links */ 
-   }
+    font-size: 16px;
+  }
 
-    /* Botão consulta */
   .btn-consulta a {
     font-size: 14px;
     padding: 8px 16px;
-    white-space: nowrap; /* mantém sempre em 1 linha */
+    white-space: nowrap;
   }
 
-  /*HERO*/
- .hero {
-    grid-template-columns: 1fr; /* transforma em coluna */
+  .hero {
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
   .hero-text {
-    max-width: 100%;
+    padding-left: 0;
     margin: 0 auto;
-    padding-left: 0; /* remove padding lateral no mobile */
   }
 
   .sobre-container {
@@ -1213,47 +1169,20 @@ footer {
     text-align: center;
   }
 
-  .sobre-imagem img {
-  width: 100%;
-  max-width: 350px;
-  height: 420px; /* define altura fixa */
-  object-fit: cover; /* faz o corte automático */
-  object-position: center top; /* foca na parte superior (rosto) */
-  border-radius: 10px;
-}
-
-
-  /*welcome*/
   .welcome {
-    padding: 3rem 1.5rem; /* reduz padding da seção */
-  }
-
-  .welcome-label {
-    font-size: 0.85rem; /* um pouco menor */
-    padding-left: 6px;
-    margin-bottom: 1.5rem;
-  }
-
-  .welcome-title {
-    font-size: 1.5rem; /* título menor */
-    letter-spacing: 1.5px;
-    margin-bottom: 1rem;
-  }
-
-  .welcome-text {
-    font-size: 0.95rem; /* texto um pouco menor */
-    max-width: 600px;   /* reduz largura do parágrafo */
-    line-height: 1.5;
+    padding: 3rem 1.5rem;
   }
 }
 
-/* Telas até 768px (tablets e celulares grandes) */
+/* ===========================================================
+   MOBILE / TABLETS (até 768px)
+   =========================================================== */
 @media (max-width: 768px) {
 
-  /* Navbar */
+  /* MENU MOBILE */
   .nav-links {
-  position: absolute; /* menu abaixo da navbar */
-    top: 100%; /* imediatamente abaixo da navbar */
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
     background: var(--bg-navbar);
@@ -1270,35 +1199,27 @@ footer {
 
   .menu-toggle {
     display: block;
-    cursor: pointer;
     font-size: 26px;
-  }
-
-    .logo {
-    height:70px; /* reduz levemente a box */
+    cursor: pointer;
   }
 
   .logo img {
-    height: 100px; /* logo um pouco menor */
+    height: 100px;
   }
 
-  /* Adiciona o botão dentro do menu */
+  /* Botão dentro do menu */
   .btn-consulta {
-    order: 100; /* garante que fique por último no menu */
-    margin: 10px 0; /* espaçamento interno */
-    width: 50%; /* opcional: botão ocupa toda a largura do menu */
-    display: flex;
-    justify-content: center;
+    width: 50%;
+    margin: 10px auto;
   }
 
   .btn-consulta a {
-    width: auto; /* mantém o tamanho natural */
-    padding: 10px 20px;
     font-size: 16px;
+    padding: 10px 20px;
   }
 
-  /*HERO*/
- .hero-text h1 {
+  /* HERO */
+  .hero-text h1 {
     font-size: 1.6rem;
   }
 
@@ -1306,120 +1227,37 @@ footer {
     font-size: 1rem;
   }
 
-  .hero-container {
-    gap: 15px;
-  }
-
   .hero-image img {
     max-width: 90%;
   }
-  /*wELCOME*/
- .welcome {
-    padding: 3rem 1rem;
+
+  /* ATUAÇÃO */
+  .cards,
+  .online-cards {
+    grid-template-columns: 1fr;
   }
 
-  .welcome-title {
-    font-size: 1.5rem;
-  }
-
-  .welcome-text {
-    font-size: 0.95rem;
-    max-width: 90%;
-  }
-
-  .welcome-label {
-    font-size: 0.8rem;
-    margin-bottom: 1.5rem;
-    padding-left: 6px;
-    border-left-width: 3px;
-  }
-
-  /*SEÇÃO DE ATUAÇÃO*/
-   .cards {
-    grid-template-columns: 1fr; /* 1 coluna */
-    gap: 1.5rem;
-  }
-
-  .card {
-    max-width: 100%;
-  }
-
-    /*SEÇÃO PSICOTERAPIA ONLINE*/
-    .online-cards {
-    grid-template-columns: 1fr; /* 1 coluna */
-    gap: 1.5rem;
-  }
-
-  .online-card {
-    max-width: 100%; 
-  }
-
-  .online-label {
-    text-align: center;   
-    border-left: none;    
-    padding-left: 0;
-  }
-
-     /*SEÇÃO SOBRE MIM*/
+  /* SOBRE MIM */
   .sobre-container {
     gap: 20px;
   }
 
-.sobre-imagem img {
-  width: 100%;
-  max-width: 320px;
-  height: 400px; /* ajusta o enquadramento */
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 10px;
-}
-
-
-
-  .sobre-texto .nome {
-    font-size: 1.5rem; /* diminui o título */
+  .sobre-imagem img {
+    width: 100%;
+    max-width: 320px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center top;
   }
 
-  .sobre-texto p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+  /* FAQ */
+  .faq {
+    padding: 0 15px;
   }
 
-  .sobre-label {
-    text-align: center;
-    border-left: none;  /* remove a barrinha lateral */
-    padding-left: 0;
-  }
-
-  /*FAQ*/
-   .faq {
-    padding: 0 15px; /* respiro nas laterais */
-  }
-
-  .faq h2 {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .faq p {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .faq-question {
-    font-size: 14px;
-    padding: 12px 16px;
-  }
-
-  .faq-icon {
-    width: 18px;
-    height: 18px;
-  }
-
-  /*FOOTER*/
-   .footer-principal-conteudo {
+  /* FOOTER */
+  .footer-principal-conteudo {
     flex-direction: column;
-    align-items: center;
     gap: 30px;
     padding-bottom: 40px;
   }
@@ -1427,95 +1265,42 @@ footer {
   .coluna-logo,
   .coluna-navegacao,
   .coluna-contato {
-    flex: none;
     width: 100%;
     text-align: center;
-    padding: 0;
   }
+}
 
-  .coluna-logo {
-    margin-bottom: 20px;
-  }
-
-  .coluna-navegacao ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 0;
-  }
-
-  .coluna-navegacao li {
-    margin-bottom: 10px;
-  }
-
-
-  .bloco-redes {
-    width: 100%;
-  }
-
-  .perfil-insta {
-    justify-content: center;
-  }
-
-  .footer-faixa-legal,
-  .footer-copyright {
-    font-size: 0.8em;
-    text-align: center;
-    padding: 15px 10px;
-  }
-
-  .footer-copyright a {
-    display: block;
-    margin-top: 5px;
-  }
-
- }
-
-/* Telas até 480px (celulares pequenos) */
+/* ===========================================================
+   MOBILE PEQUENO (até 480px)
+   =========================================================== */
 @media (max-width: 480px) {
+
   .navbar {
     padding: 15px 20px;
   }
 
-  .logo {
-    height:50px; /* box menor para celular */
-  }
-
   .logo img {
-    height: 100px; /* logo proporcional, ainda legível */
+    height: 100px;
   }
 
-  /* HERO */
- .hero {
+  /* HERO ESPECIAL – BOX LADO A LADO */
+  .hero {
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: auto; /* mantém o hero visível na tela */
+    min-height: auto;
   }
 
   .hero-container {
-    display: grid;
-    grid-template-columns: 45% 55%; /* mantém proporção lado a lado */
-    align-items: center;
     width: 95%;
-    max-width: 380px; /* limita o tamanho total (box menor) */
-    min-height: 250px; /* altura reduzida */
-    margin: 20px auto; /* centraliza a “box” na tela */
+    max-width: 380px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 45% 55%;
     border-radius: 12px;
     overflow: hidden;
-    background: var(--bg-hero);
-  }
-
-  .hero-text {
-    padding: 10px;
-    max-width: 100%;
   }
 
   .hero-text h1 {
     font-size: 15px;
-    line-height: 1.3;
     margin-bottom: 10px;
   }
 
@@ -1523,190 +1308,19 @@ footer {
     font-size: 14px;
   }
 
-  .hero-image {
-    width: 100%;
-    height: 100%;
-    max-height: 400px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-  .hero-image::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to right,
-      rgba(237, 237, 228, 1) 0%,
-      rgba(237, 237, 228, 0.327) 30%,
-      rgba(237, 237, 228, 0.098) 50%
-    );
-    pointer-events: none;
-  }
-    /*CONTATO*/
-   .secao-contato-whatsapp {
+  /* CONTATO */
+  .secao-contato-whatsapp {
     flex-direction: column;
     max-width: 90%;
     margin: 20px auto;
-    box-shadow: none; /* opcional: remover sombra */
   }
 
   .coluna-imagem {
-    display: none; /* esconde a imagem em telas menores */
+    display: none;
   }
 
   .coluna-conteudo {
+    text-align: center;
     width: 100%;
-    padding: 20px;
-    border-radius: 15px; /* suaviza cantos em mobile */
-    align-items: center;
-    text-align: center;
-    position: relative;
-  }
-
-  .icone-cerebro-fundo {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-    margin-bottom: 20px;
-  }
-
-  .texto-chamada {
-    padding-left: 0;
-    max-width: 100%;
-    font-size: 1.1em;
-  }
-
-  .botao-whatsapp {
-    margin-left: 0;
-    align-self: center;
-  }
-    .sobre-container {
-    flex-direction: column;      
-    align-items: center;         
-    gap: 20px;
-    text-align: center;
-    padding: 25px 20px;
-  }
-
-  .sobre-imagem img {
-  width: 120%;
-  max-width: 280px;
-  height: 350px; /* mantém o corte dos pés */
-  object-fit: cover;
-  object-position: center 15%; /* sobe o foco um pouco mais */
-  border-radius: 10px;
-}
-
-
-  .sobre-texto .nome {
-    font-size: 1.8rem;           /* título maior */
-    margin-bottom: 12px;
-  }
-
-  .sobre-texto p {
-    font-size: 1.05rem;          /* texto levemente maior */
-    line-height: 1.8;
-    margin: 0 auto;
-    max-width: 90%;
-  }
-
-  .sobre-label {
-    text-align: center;
-    border-left: none;
-    padding-left: 0;
-    margin-bottom: 18px;
-    font-size: 1.1rem;           /* label mais visível */
-  }
-
-  /* ===== FAQ ===== */
-  .faq {
-    padding: 0 20px;
-  }
-
-  .faq h2 {
-    font-size: 1.4rem;           /* título do FAQ maior */
-    text-align: center;
-    margin-bottom: 12px;
-  }
-
-  .faq p {
-    font-size: 1rem;             /* texto mais legível */
-    text-align: center;
-    line-height: 1.6;
-  }
-
-  .faq-question {
-    font-size: 1rem;             /* perguntas maiores */
-    padding: 14px 18px;
-  }
-
-  .faq-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-   footer {
-    padding-top: 20px;
-  }
-
-  .footer-principal-conteudo {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px 10px 40px 10px;
-    gap: 25px;
-  }
-
-  .coluna-logo,
-  .coluna-navegacao,
-  .coluna-contato {
-    flex: none;
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .logo-footer {
-    max-width: 150px;
-    margin: 0 auto 10px;
-  }
-
-  .titulo-coluna {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-  }
-
-  .lista-links li,
-  .item-contato {
-    justify-content: center;
-  }
-
-  .icone-contato-img {
-    width: 18px;
-  }
-  .bloco-redes {
-    width: 100%;
-  }
-
-  .bloco-redes img {
-    width: 28px;
-    height: 28px;
-  }
-
-  .lista-links a,
-  .link-contato {
-    font-size: 0.9em;
   }
 }
