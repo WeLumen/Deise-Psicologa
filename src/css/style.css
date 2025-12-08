@@ -216,7 +216,7 @@ body {
 
 .welcome-title {
   font-family: 'Cormorant SC', serif;
-  font-size: 2.0rem;
+  font-size: 1.5rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
@@ -225,7 +225,7 @@ body {
 }
 
 .welcome-text {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
@@ -244,12 +244,12 @@ body {
 }
 
 .atuacao-label {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-style: normal;
   color: var(--text-hover);
   border-left: 4px solid var(--text-hover);
   padding-left: 8px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-align: left;
   font-family: 'Cormorant SC', serif;
 }
@@ -321,14 +321,14 @@ body {
 }
 
 .card h3 {
-   font-size: 1rem;
+   font-size: 1.6rem;
   font-family: 'Cormorant Infant', serif;
   color: var(--text-hover);
   margin-bottom: 15px;
 }
 
 .card p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   color: var(--text-secondary);
   text-align:center;
@@ -433,7 +433,7 @@ body {
 
 .sobre-texto .nome {
   font-family: 'Cormorant SC', serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 20px;
 }
