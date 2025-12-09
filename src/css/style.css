@@ -134,6 +134,17 @@ body {
   
 }
 
+.bemvindo-label {
+  font-size: 1.5rem;
+  font-style: normal;
+  color: var(--text-hover);
+  border-left: 4px solid var(--text-hover);
+  padding-left: 8px;
+  margin-top: 30px;
+  margin-bottom:1rem;
+  text-align: left;
+  font-family: 'Cormorant SC', serif;
+}
 /* TEXTO */
 .hero-text {
   max-width: 500px;
@@ -142,8 +153,8 @@ body {
 }
 
 .hero-text h1 {
-  font-family: 'Cormorant Infant', serif;
-  font-size: 25px;
+  font-family: 'Cormorant SC', serif;
+  font-size: 15px;
   font-weight: 450;
   line-height: 1.4;
   color: var(--text-main);
@@ -151,7 +162,7 @@ body {
 }
 
 .hero-text p {
-  font-family: 'Cormorant SC', serif;
+  font-family: 'Cormorant infant', serif;
   font-size: 15px;
   color: var(--text-secondary);
 }
@@ -187,50 +198,6 @@ body {
     rgba(237, 237, 228, 0) 100%
   );
   pointer-events: none;
-}
-
-
-/* BEM VINDO */
-
-.welcome {
-  background-color: var(--bg-hero);
-  /* fundo */
-  padding: 4rem 2rem;
-  font-family: 'Cormorant Infant', serif;
-}
-
-.welcome-label {
-  font-size: 1.5rem;
-  font-style: normal;
-  color: var(--text-hover);
-  /* verde escuro */
-  border-left: 4px solid var(--text-hover);
-  padding-left: 8px;
-  margin-bottom: 2rem;
-  text-align: left;
-}
-
-.welcome-content {
-  text-align: center;
-}
-
-.welcome-title {
-  font-family: 'Cormorant SC', serif;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  color: var(--text-main);
-  /* título escuro */
-}
-
-.welcome-text {
-  font-size: 1.3rem;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  /* texto médio */
 }
 
 /* SEÇÃO ÁREAS DE ATUAÇÃO */
@@ -1171,6 +1138,31 @@ footer {
 
   .welcome {
     padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .hero-text {
+    padding-left: 0;
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-image {
+    display: none; /* opcional: esconder imagem no mobile */
   }
 }
 
