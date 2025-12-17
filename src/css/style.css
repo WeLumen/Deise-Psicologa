@@ -174,8 +174,8 @@ header {
 }
 
 .hero-text p {
-  font-family: 'Cormorant infant', serif;
-  font-size: 16px;
+  font-family: 'Cormorant Infant', serif;
+  font-size: 20px;
   color: var(--text-secondary);
 }
 
@@ -231,15 +231,6 @@ header {
   margin-bottom: 2rem;
   text-align: left;
   font-family: 'Cormorant SC', serif;
-}
-
-.atuacao h2 {
-  text-align: center;
-  font-family: 'Cormorant SC', serif;
-  font-size: 1.5rem;
-  line-height: 1.5;
-  color: var(--text-main);
-  margin-bottom: 3rem;
 }
 .cards {
   display: grid;
@@ -307,6 +298,7 @@ header {
 }
 
 .card p {
+  font-family: 'Cormorant Infant', serif;
   font-size: 1.3rem;
   line-height: 1.6;
   color: var(--text-secondary);
@@ -359,6 +351,7 @@ header {
 }
 
 .online-card p {
+  font-family: 'Cormorant Infant', serif;
   font-size: 1.3rem;
   line-height: 1.6;
   color: var(--text-secondary);
@@ -1018,6 +1011,7 @@ footer {
   margin-bottom: 1rem;
   font-size: 1rem;
   color: var(--btn-hover);
+  font-family: "Cormorant Infant", serif;
 }
 
 /* ===== LISTAS ===== */
@@ -1048,6 +1042,21 @@ footer {
 /* Desktops grandes */
 
   @media (min-width: 1600px) {
+    .container {
+    max-width: 1400px;
+  }
+
+  .hero-container {
+    gap: 120px;
+  }
+
+  .hero-text h1 {
+    font-size: 38px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+  }
   .hero-container {
     max-width: 1400px;
     gap: 120px;
@@ -1062,7 +1071,7 @@ footer {
   }
 
   .hero-text p {
-    font-size: 18px;
+    font-size: 30px;
   }
 
   .bemvindo-label {
