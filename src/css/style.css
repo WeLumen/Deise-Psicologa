@@ -1024,6 +1024,8 @@ footer {
 .legal-content ul li,
 .privacy-policy ul li {
   margin-bottom: 0.7rem;
+  font-family: "Cormorant Infant", serif;
+  
 }
 
 /* ===== LINKS ===== */
@@ -1031,6 +1033,7 @@ footer {
 .legal-content a {
   color: var(--btn-bg);
   text-decoration: none;
+  
 }
 
 .privacy-policy a:hover,
