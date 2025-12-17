@@ -26,8 +26,21 @@
 }
 
 body {
-  font-family: 'Cormorant Infant', serif;
-  background: var(--bg-body);
+  font-family: 'Cormorant SC', serif;
+  color: var(--text-default);
+  overflow-x: hidden;
+  background-color: var(--bg-body);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+section,
+footer,
+header {
+  width: 100%;
 }
 
 /* NAVBAR */
@@ -35,16 +48,24 @@ body {
     display: none;
 
   }
-
-.navbar {
-  width: 100%;
-  position: relative; 
-  padding: 25px 50px;
+  header {
+  background: #fff;
+}
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: var(--bg-navbar);
-  border-bottom: 1px solid var(--border-navbar);
+  align-items: center;
+}
+.navbar {
+   padding: 25px 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-default);
 }
 
 /* LOGO */
@@ -88,7 +109,7 @@ body {
 
 /* BOTÃO */
 .btn-consulta {
-  margin-left: auto; 
+  margin-left: 20px;
 }
 .btn-consulta a {
   background: var(--btn-bg);
@@ -107,30 +128,24 @@ body {
   background: var(--btn-hover);
 }
 
-.navbar .btn-consulta {
-  margin-left: 20px;
-}
 
 /* HERO */
 .hero {
   background: var(--bg-hero);
   height: 100vh; /* ocupa a tela inteira */
-  padding: 0;
   display: flex;
-  justify-content: center;
   align-items: center; /* centraliza verticalmente */
-  overflow: hidden;
 }
 
 .hero-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
   max-width: 1200px;
   width: 100%;
   height: 100%; /* ocupa 100% do hero */
-  position: relative;
+  padding: 0 24px;
   
 }
 
@@ -144,7 +159,7 @@ body {
 }
 /* TEXTO */
 .hero-text {
-  max-width: 500px;
+  max-width: 520px;
   text-align: left;
   padding-left: 40px; /* espaçamento da lateral */
 }
@@ -155,12 +170,12 @@ body {
   font-weight: 450;
   line-height: 1.4;
   color: var(--text-main);
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .hero-text p {
   font-family: 'Cormorant infant', serif;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-secondary);
 }
 
@@ -1030,347 +1045,465 @@ footer {
 }
 
 /* ===== RESPONSIVO ===== */
-@media (min-width: 1600px) {
-  .container,
-  .hero-container,
-  .legal-content {
+/* Desktops grandes */
+
+  @media (min-width: 1600px) {
+  .hero-container {
     max-width: 1400px;
+    gap: 120px;
+  }
+
+  .hero-text {
+    max-width: 600px;
   }
 
   .hero-text h1 {
-    font-size: 48px;
-  }
-
-  .hero-text p {
-    font-size: 24px;
-  }
-
-  .card {
-    padding: 20px 25px;
-  }
-
-  .cards {
-    gap: 30px;
-  }
-}
-
-@media (min-width: 1440px) {
-
-  .navbar {
-    padding: 30px 100px;
-  }
-
-  .logo img {
-    height: 170px;
-  }
-
-  .nav-links {
-    gap: 50px;
-  }
-
-  .nav-links a {
-    font-size: 22px;
-  }
-}
-
-/* ===========================================================
-   NOTEBOOKS / TABLETS GRANDES (até 1024px)
-   =========================================================== */
-   @media (max-width: 1366px) {
-  .hero-text h1 {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .hero-text p {
     font-size: 18px;
   }
 
-  .card {
-    padding: 15px;
+  .bemvindo-label {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 1440px) {}
+
+/* Notebooks */
+@media (max-width: 1200px) {
+   .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  .online {
+    padding: 3.5rem 2rem;
+    min-height: auto;
   }
 
-  .cards {
-    gap: 20px;
+  .online-cards {
+    gap: 25px;
+  }
+
+  .online-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .online-card p {
+    font-size: 1.2rem;
+  }
+  .sobre {
+    padding: 50px 20px;
+  }
+
+  .sobre-container {
+    gap: 30px;
+  }
+
+  .sobre-imagem img {
+    width: 320px;
+    height: 480px;
+  }
+
+  .sobre-texto .nome {
+    font-size: 1.5rem;
+  }
+
+  .sobre-texto p {
+    font-size: 1.15rem;
   }
 }
 
-@media (min-width: 1440px) {
-  .navbar {
-    padding: 30px 100px; /* mais espaçamento lateral */
-  }
-
-  .logo img {
-    height: 170px; /* ligeiro aumento da logo */
-  }
-
-  .nav-links {
-    gap: 50px; /* aumenta o espaço entre os links */
-  }
-
-  .nav-links a {
-    font-size: 22px; /* aumenta o tamanho da fonte */
-  }
-}
 @media (max-width: 1024px) {
- /* Navbar geral */
+  .secao-contato-whatsapp {
+    max-width: 900px;
+  }
+
+  .coluna-conteudo {
+    padding: 20px 40px;
+  }
+
+  .titulo-conversar {
+    font-size: 1.8em;
+  }
+
+  .texto-chamada {
+    font-size: 1.1em;
+    padding-left: 90px;
+  }
+
+  .botao-whatsapp {
+    margin-left: 90px;
+  }
+
+  .footer-principal-conteudo {
+    gap: 40px;
+  }
+
+  .coluna-logo {
+    flex: 1.2;
+  }
+
+  .coluna-contato,
+  .coluna-navegacao {
+    flex: 1;
+  }
+}
+
+/* Tablets grandes */
+@media (max-width: 992px) {
   .navbar {
-    padding: 10px 30px; /* menos padding lateral */
+    padding: 20px 30px;
   }
 
   .logo img {
-    height: 65px; /* logo menor */
-  }
-
-  /* Menu */
-  .nav-links {
-    gap: 13px; /* menos espaço entre itens */
+    height: 120px;
   }
 
   .nav-links a {
-    gap: 18px; /* dá mais respiro sem quebrar */
-    flex: 1; /* ocupa o espaço disponível */
-    justify-content: center; /* espalha os links */ 
-   }
-
-    /* Botão consulta */
-  .btn-consulta a {
-    font-size: 14px;
-    padding: 8px 16px;
-    white-space: nowrap; /* mantém sempre em 1 linha */
+    font-size: 17px;
   }
 
-  /*HERO*/
- .hero {
-    grid-template-columns: 1fr; /* transforma em coluna */
+  .btn-consulta a {
+    font-size: 17px;
+    padding: 9px 20px;
+  }
+
+   .hero {
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .hero-container {
+    max-width: 900px;
+    gap: 40px;
+  }
+
+  .hero-text h1 {
+    font-size: 18px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-image img {
+    object-position: top;
+  }
+}
+
+/* Tablets padrão (768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 18px 25px;
+  }
+
+  /* Mostra o menu hamburguer */
+  .menu-toggle {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text-default);
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: var(--bg-body);
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 120px;
+    transition: 0.4s ease;
+    border-left: 1px solid var(--border-navbar);
+    z-index: 1000;
+  }
+
+  /* Ativo quando abre o menu */
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 22px;
+  }
+
+  /* Botão dentro do menu lateral */
+  .btn-consulta {
+    margin-left: 0;
+  }
+
+  .btn-consulta a {
+    font-size: 20px;
+    padding: 12px 25px;
+  }
+
+  /* Reduz logo */
+  .logo img {
+    height: 110px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
     text-align: center;
+    height: auto;
   }
 
   .hero-text {
     max-width: 100%;
-    margin: 0 auto;
-    padding-left: 0; /* remove padding lateral no mobile */
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .bemvindo-label {
+    margin: 0 auto 1rem auto;
+    font-size: 1.3rem;
+    border-left: none;
+    border-bottom: 3px solid var(--text-hover);
+    display: inline-block;
+    padding: 0 0 5px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 19px;
+    margin-bottom: 15px;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+  }
+
+  .hero-image {
+    height: 330px;
+  }
+
+  .hero-image img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Ajusta o gradiente para mobile */
+  .hero-image::before {
+    background: linear-gradient(to bottom,
+      rgba(237, 237, 228, 1) 0%,
+      rgba(237, 237, 228, 0.6) 40%,
+      rgba(237, 237, 228, 0) 80%
+    );
+  }
+   .atuacao {
+    padding: 3rem 1.5rem;
+    min-height: auto;
+  }
+
+  .atuacao-label {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    border-left: none;
+    border-bottom: 3px solid var(--text-hover);
+    padding-left: 0;
+    padding-bottom: 6px;
+    display: inline-block;
+  }
+
+  .atuacao h2 {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .card {
+    padding: 20px 20px;
+  }
+
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+
+  .card-icon img {
+    width: 28px;
+  }
+
+  .card h3 {
+    font-size: 1.5rem;
+  }
+
+  .card p {
+    font-size: 1.2rem;
+  }
+
+  /* Ajuste da pontinha (balão de fala) no mobile */
+  .card::after {
+    bottom: -5px;
+    right: -6px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 10px solid var(--bg-body);
+    transform: rotate(20deg);
+  }
+  .online {
+    padding: 3rem 1.5rem;
+    min-height: auto; /* não ocupa a tela inteira no mobile */
+  }
+
+  .online-label {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    border-left: none;
+    border-bottom: 3px solid var(--text-hover);
+    padding-left: 0;
+    padding-bottom: 6px;
+    display: inline-block;
+  }
+
+  .online-cards {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    gap: 22px;
+  }
+
+  .online-card {
+    padding: 22px 18px;
+  }
+
+  .online-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .online-card p {
+    font-size: 1.15rem;
+  }
+  .sobre {
+    padding: 45px 20px;
+  }
+
+  .sobre-label {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    border-left: none;
+    border-bottom: 3px solid var(--text-hover);
+    padding-left: 0;
+    padding-bottom: 6px;
+    display: inline-block;
   }
 
   .sobre-container {
     flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
   .sobre-imagem img {
-  width: 100%;
-  max-width: 350px;
-  height: 420px; /* define altura fixa */
-  object-fit: cover; /* faz o corte automático */
-  object-position: center top; /* foca na parte superior (rosto) */
-  border-radius: 10px;
-}
-
-
-  /*welcome*/
-  .welcome {
-    padding: 3rem 1.5rem; /* reduz padding da seção */
+    width: 280px;
+    height: 430px;
+    border-radius: 30px; /* mais suave no mobile */
+    object-position: center top;
   }
 
-  .welcome-label {
-    font-size: 0.85rem; /* um pouco menor */
-    padding-left: 6px;
-    margin-bottom: 1.5rem;
+  .sobre-texto {
+    text-align: left;
+    max-width: 600px;
   }
-
-  .welcome-title {
-    font-size: 1.5rem; /* título menor */
-    letter-spacing: 1.5px;
-    margin-bottom: 1rem;
-  }
-
-  .welcome-text {
-    font-size: 0.95rem; /* texto um pouco menor */
-    max-width: 600px;   /* reduz largura do parágrafo */
-    line-height: 1.5;
-  }
-}
-
-/* Telas até 768px (tablets e celulares grandes) */
-@media (max-width: 768px) {
-    * {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  /* Navbar */
-  .nav-links {
-  position: absolute; /* menu abaixo da navbar */
-    top: 100%; /* imediatamente abaixo da navbar */
-    left: 0;
-    right: 0;
-    background: var(--bg-navbar);
-    flex-direction: column;
-    display: none;
-    padding: 10px 0;
-    text-align: center;
-    z-index: 1000;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 26px;
-  }
-
-    .logo {
-    height:70px; /* reduz levemente a box */
-  }
-
-  .logo img {
-    height: 100px; /* logo um pouco menor */
-  }
-
-  /* Adiciona o botão dentro do menu */
-  .btn-consulta {
-    order: 100; /* garante que fique por último no menu */
-    margin: 10px 0; /* espaçamento interno */
-    width: 50%; /* opcional: botão ocupa toda a largura do menu */
-    display: flex;
-    justify-content: center;
-  }
-
-  .btn-consulta a {
-    width: auto; /* mantém o tamanho natural */
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-   .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 25px;
-    padding: 0 15px; /* <-- ESSENCIAL */
-  }
-  /*HERO*/
- .hero-text h1 {
-    font-size: 1.6rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
-
-  .hero-container {
-    gap: 15px;
-  }
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-  /*wELCOME*/
- .welcome {
-    padding: 3rem 1rem;
-  }
-
-  .welcome-title {
-    font-size: 1.5rem;
-  }
-
-  .welcome-text {
-    font-size: 0.95rem;
-    max-width: 90%;
-  }
-
-  .welcome-label {
-    font-size: 0.8rem;
-    margin-bottom: 1.5rem;
-    padding-left: 6px;
-    border-left-width: 3px;
-  }
-
-  /*SEÇÃO DE ATUAÇÃO*/
-   .cards {
-    grid-template-columns: 1fr; /* 1 coluna */
-    gap: 1.5rem;
-  }
-
-  .card {
-    max-width: 100%;
-  }
-
-    /*SEÇÃO PSICOTERAPIA ONLINE*/
-    .online-cards {
-    grid-template-columns: 1fr; /* 1 coluna */
-    gap: 1.5rem;
-  }
-
-  .online-card {
-    max-width: 100%; 
-  }
-
-  .online-label {
-    text-align: center;   
-    border-left: none;    
-    padding-left: 0;
-  }
-
-     /*SEÇÃO SOBRE MIM*/
-  .sobre-container {
-    gap: 20px;
-  }
-
-.sobre-imagem img {
-  width: 100%;
-  max-width: 320px;
-  height: 400px; /* ajusta o enquadramento */
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 10px;
-}
-
-
 
   .sobre-texto .nome {
-    font-size: 1.5rem; /* diminui o título */
+    font-size: 1.4rem;
+    text-align: center;
   }
 
   .sobre-texto p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    text-align: justify;
   }
 
-  .sobre-label {
-    text-align: center;
-    border-left: none;  /* remove a barrinha lateral */
-    padding-left: 0;
-  }
-
-  /*FAQ*/
-   .faq {
-    padding: 0 15px; /* respiro nas laterais */
+  .faq {
+    padding: 40px 20px;
   }
 
   .faq h2 {
-    font-size: 20px;
-    text-align: center;
+    font-size: 30px;
   }
 
-  .faq p {
-    font-size: 14px;
-    text-align: center;
+  .faq h2::before {
+    height: 24px;
   }
 
   .faq-question {
-    font-size: 14px;
-    padding: 12px 16px;
+    padding: 16px 18px;
+    font-size: 18px;
+  }
+
+  .faq p {
+    font-size: 17px;
   }
 
   .faq-icon {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
 
-  /*FOOTER*/
+  .secao-contato-whatsapp {
+    flex-direction: column;
+    margin: 30px 20px;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+
+  .coluna-imagem {
+    flex: none;
+    height: 260px;
+    border-radius: 25px 25px 0 0;
+  }
+
+  .coluna-conteudo {
+    padding: 60px 30px 40px;
+    border-radius: 0 0 25px 25px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icone-cerebro-fundo {
+    position: relative;
+    transform: none;
+    left: auto;
+    top: auto;
+    margin-bottom: 20px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .titulo-conversar {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    align-self: center;
+  }
+
+  .texto-chamada {
+    padding-left: 0;
+    max-width: 100%;
+    font-size: 1.1em;
+    text-align: center;
+  }
+
+  .botao-whatsapp {
+    margin-left: 0;
+    align-self: center;
+    margin-top: 10px;
+  }
+    /*FOOTER*/
    .footer-principal-conteudo {
     flex-direction: column;
     align-items: center;
@@ -1435,54 +1568,39 @@ footer {
     display: block;
     margin-top: 5px;
   }
+}
 
- }
-
-/* Telas até 480px (celulares pequenos) */
-@media (max-width: 480px) {
+/* Celulares grandes (480–576px) */
+@media (max-width: 576px) {
   .navbar {
     padding: 15px 20px;
   }
 
   .logo {
-    height:50px; /* box menor para celular */
+    height: 50px;
   }
 
   .logo img {
-    height: 100px; /* logo proporcional, ainda legível */
+    height: 95px;
   }
 
-  /* HERO */
- .hero {
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: auto; /* mantém o hero visível na tela */
+  .nav-links {
+    width: 80%;
   }
 
-  .hero-container {
-    display: grid;
-    grid-template-columns: 45% 55%; /* mantém proporção lado a lado */
-    align-items: center;
-    width: 95%;
-    max-width: 380px; /* limita o tamanho total (box menor) */
-    min-height: 250px; /* altura reduzida */
-    margin: 20px auto; /* centraliza a “box” na tela */
-    border-radius: 12px;
-    overflow: hidden;
-    background: var(--bg-hero);
+  .nav-links a {
+    font-size: 20px;
   }
 
-  .hero-text {
-    padding: 10px;
-    max-width: 100%;
+  .btn-consulta a {
+    font-size: 18px;
+  }
+   .hero {
+    padding: 50px 15px;
   }
 
   .hero-text h1 {
-    font-size: 12px;
-    line-height: 1.2;
-    margin-bottom: 10px;
+    font-size: 18px;
   }
 
   .hero-text p {
@@ -1490,37 +1608,85 @@ footer {
   }
 
   .hero-image {
-    width: 100%;
-    height: 100%;
-    max-height: 500px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+    height: 300px;
   }
 
   .hero-image::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to right,
-      rgba(237, 237, 228, 1) 10%,
-      rgba(237, 237, 228, 0.327) 30%,
-      rgba(237, 237, 228, 0.098) 50%
+    background: linear-gradient(to bottom,
+      rgba(237, 237, 228, 1) 0%,
+      rgba(237, 237, 228, 0.5) 30%,
+      rgba(237, 237, 228, 0) 70%
     );
-    pointer-events: none;
   }
-    /*CONTATO*/
+  .atuacao {
+    padding: 2.5rem 1rem;
+  }
+
+  .atuacao-label {
+    font-size: 1.2rem;
+  }
+
+  .atuacao h2 {
+    font-size: 1.3rem;
+  }
+
+  .card {
+    padding: 18px 18px;
+  }
+
+  .card h3 {
+    font-size: 1.4rem;
+  }
+
+  .card p {
+    font-size: 1.1rem;
+  }
+
+  .card-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .card-icon img {
+    width: 24px;
+  }
+   .online {
+    padding: 2.5rem 1rem;
+  }
+
+  .online-label {
+    font-size: 1.2rem;
+  }
+
+  .online-card {
+    padding: 20px 16px;
+  }
+
+  .online-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .online-card p {
+    font-size: 1.05rem;
+  }
+  .sobre {
+    padding: 40px 15px;
+  }
+
+  .sobre-imagem img {
+    width: 250px;
+    height: 380px;
+  }
+
+  .sobre-texto .nome {
+    font-size: 1.3rem;
+  }
+
+  .sobre-texto p {
+    font-size: 1.05rem;
+  }
+
+  /*CONTATO*/
    .secao-contato-whatsapp {
     flex-direction: column;
     max-width: 90%;
@@ -1559,71 +1725,6 @@ footer {
     margin-left: 0;
     align-self: center;
   }
-    .sobre-container {
-    flex-direction: column;      
-    align-items: center;         
-    gap: 20px;
-    text-align: center;
-    padding: 25px 20px;
-  }
-
-  .sobre-imagem img {
-  width: 100%;
-  max-width: 280px;
-  height: 350px; /* mantém o corte dos pés */
-  object-fit: cover;
-  object-position: center 15%; /* sobe o foco um pouco mais */
-  border-radius: 10px;
-}
-
-
-  .sobre-texto .nome {
-    font-size: 1.8rem;           /* título maior */
-    margin-bottom: 12px;
-  }
-
-  .sobre-texto p {
-    font-size: 1.05rem;          /* texto levemente maior */
-    line-height: 1.8;
-    margin: 0 auto;
-    max-width: 90%;
-  }
-
-  .sobre-label {
-    text-align: center;
-    border-left: none;
-    padding-left: 0;
-    margin-bottom: 18px;
-    font-size: 1.1rem;           /* label mais visível */
-  }
-
-  /* ===== FAQ ===== */
-  .faq {
-    padding: 0 20px;
-  }
-
-  .faq h2 {
-    font-size: 1.4rem;           /* título do FAQ maior */
-    text-align: center;
-    margin-bottom: 12px;
-  }
-
-  .faq p {
-    font-size: 1rem;             /* texto mais legível */
-    text-align: center;
-    line-height: 1.6;
-  }
-
-  .faq-question {
-    font-size: 1rem;             /* perguntas maiores */
-    padding: 14px 18px;
-  }
-
-  .faq-icon {
-    width: 20px;
-    height: 20px;
-  }
-
    footer {
     padding-top: 20px;
   }
@@ -1690,3 +1791,243 @@ footer {
     font-size: 0.9em;
   }
 }
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 18px;
+  }
+
+  .logo img {
+    height: 85px;
+  }
+
+  .nav-links {
+    width: 85%;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  .btn-consulta a {
+    font-size: 17px;
+    padding: 10px 22px;
+  }
+   .hero {
+    padding: 40px 15px;
+  }
+
+  .hero-text h1 {
+    font-size: 17px;
+  }
+
+  .hero-text p {
+    font-size: 13px;
+  }
+
+  .hero-image {
+    height: 260px;
+  }
+
+  .hero-image::before {
+    background: linear-gradient(to bottom,
+      rgba(237, 237, 228, 1) 0%,
+      rgba(237, 237, 228, 0.4) 25%,
+      rgba(237, 237, 228, 0) 70%
+    );
+  }
+
+  .atuacao {
+    padding: 2rem 1rem;
+  }
+
+  .atuacao-label {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .online {
+    padding: 2rem 1rem;
+  }
+
+  .online-label {
+    font-size: 1.1rem;
+  }
+
+  .online-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .online-card p {
+    font-size: 1rem;
+  }
+   .sobre {
+    padding: 35px 15px;
+  }
+
+  .sobre-label {
+    font-size: 1.1rem;
+  }
+
+  .sobre-imagem img {
+    width: 220px;
+    height: 340px;
+  }
+
+  .sobre-texto p {
+    font-size: 1rem;
+  }
+
+   .faq {
+    padding: 30px 15px;
+  }
+
+  .faq h2 {
+    font-size: 26px;
+    text-align: left;
+  }
+
+  .faq h2::before {
+    height: 22px;
+  }
+
+  .faq-question {
+    padding: 14px 16px;
+    font-size: 17px;
+  }
+
+  .faq p {
+    font-size: 16px;
+  }
+
+  .faq-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+   /*CONTATO*/
+   .secao-contato-whatsapp {
+    flex-direction: column;
+    max-width: 90%;
+    margin: 20px auto;
+    box-shadow: none; /* opcional: remover sombra */
+  }
+
+  .coluna-imagem {
+    display: none; /* esconde a imagem em telas menores */
+  }
+
+  .coluna-conteudo {
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px; /* suaviza cantos em mobile */
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  .icone-cerebro-fundo {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: 20px;
+  }
+
+  .texto-chamada {
+    padding-left: 0;
+    max-width: 100%;
+    font-size: 1.1em;
+  }
+
+  .botao-whatsapp {
+    margin-left: 0;
+    align-self: center;
+  }
+
+   .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-float img {
+    width: 30px;
+    height: 30px;
+  }
+ footer {
+    padding-top: 20px;
+  }
+
+  .footer-principal-conteudo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px 40px 10px;
+    gap: 25px;
+  }
+
+  .coluna-logo,
+  .coluna-navegacao,
+  .coluna-contato,
+  .coluna-blog-redes {
+    flex: none;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .logo-footer {
+    max-width: 150px;
+    margin: 0 auto 10px;
+  }
+
+  .titulo-coluna {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+
+  .lista-links li,
+  .item-contato {
+    justify-content: center;
+  }
+
+  .icone-contato-img {
+    width: 18px;
+  }
+
+  .card-blog {
+    width: 100%;
+    align-items: center;
+  }
+
+  .coluna-blog-redes {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .bloco-blog,
+  .bloco-redes {
+    width: 100%;
+  }
+
+  .bloco-redes img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .lista-links a,
+  .link-contato {
+    font-size: 0.9em;
+  }
+}
+ 
