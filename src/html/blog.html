@@ -16,102 +16,57 @@
     <link rel="icon" type="image/png" href="/src/img/Logo - Deise 2.png" />
 
     <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/blog.css" />
   </head>
   <body>
-    <header>
+     <header>
       <nav class="navbar">
-        <!-- LOGO -->
-        <div class="logo">
-          <img src="/src/img/Logo - Deise 2.png" alt="Logo Deise Cerqueira" />
-        </div>
+        <div class="navbar-content">
+          <!-- LOGO -->
+          <div class="logo">
+            <img src="/src/img/Logo-Deise-2.png" alt="Logo Deise Cerqueira" />
+          </div>
 
-        <!-- MENU MOBILE -->
-        <div class="menu-toggle">☰</div>
+          <!-- MENU MOBILE -->
+          <div class="menu-toggle">☰</div>
 
-        <!-- LINKS -->
-        <ul class="nav-links">
-          <li><a href="/index.html">Início</a></li>
-          <li><a href="/index.html#atuacao">Áreas de atuação</a></li>
-          <li><a href="/index.html#online">Atendimento online</a></li>
-          <li><a href="/index.html#sobre">Me conheça</a></li>
-          <li><a href="/index.html#contato">Contato</a></li>
-        </ul>
+          <!-- LINKS -->
+          <ul class="nav-links">
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="/index.html#atuacao">Áreas de atuação</a></li>
+            <li><a href="/index.html#temas">Temas Abordados</a></li>
+            <li><a href="/index.html#sobre">Me conheça</a></li>
+            <li><a href="/index.html#contato">Contato</a></li>
+          </ul>
 
-        <!-- BOTÃO -->
-        <div class="btn-consulta">
-          <a href="https://wa.me/+5511952808637" target="_blank">Agende uma consulta</a>
+          <!-- BOTÃO -->
+          <div class="btn-consulta">
+            <a
+              href="https://wa.link/fzv4ck"
+              target="_blank"
+              onclick="gtag('event', 'conversion', {'send_to': 'AW-17739277352/bdclCLyQhuQbEKjI34pC'});"
+            >
+              Agende uma consulta</a
+            >
+          </div>
         </div>
       </nav>
     </header>
 
     <main>
-      <section class="welcome">
-        <h1 class="welcome-label">Blog</h1>
-        <article class="artigo-burnout-container">
-          <h2 class="artigo-titulo-principal">
-            Burnout: quando o cansaço no trabalho pede atenção
-          </h2>
+<section class="blog-hero">
+  <div class="blog-hero-content">
+    <h1 class="titulo-com-barra">Blog</h1>
 
-          <section class="artigo-introducao">
-            <p class="artigo-texto-paragrafo">
-              Você já se sentiu tão exausto que nem mesmo descansar parece
-              ajudar? Esse pode ser um sinal de Burnout, também chamado de
-              <strong>síndrome do esgotamento profissional.</strong>
-            </p>
+    <p>
+      Reflexões sobre saúde emocional, autocuidado, terapia e desenvolvimento pessoal.
+    </p>
+  </div>
+</section>
 
-            <p class="artigo-texto-paragrafo">
-              Reconhecido pela Organização Mundial da Saúde (OMS) como um
-              problema ocupacional, o burnout não é "frescura" nem apenas fadiga
-              física. Ele se manifesta como exaustão intensa, distanciamento
-              emocional do trabalho e queda na produtividade. No Brasil,
-              pesquisas apontam que quase 1 em cada 3 profissionais apresenta
-              sintomas, especialmente em áreas como saúde, educação e
-              tecnologia. Os impactos vão além do trabalho: atingem
-              relacionamentos, autoestima e qualidade de vida.
-            </p>
-          </section>
-
-          <section class="artigo-secao-sintomas">
-            <h3 class="artigo-subtitulo">Sintomas comuns de Burnout</h3>
-
-            <ul class="artigo-lista-sintomas">
-              <li>cansaço extremo, mesmo após o descanso;</li>
-              <li>irritabilidade e mudanças de humor;</li>
-              <li>dificuldade de concentração;</li>
-              <li>falta de motivação;</li>
-              <li>
-                sintomas físicos, como insônia, dores de cabeça e problemas
-                digestivos.
-              </li>
-            </ul>
-
-            <p class="artigo-alerta-ajuda">
-              Se esses sinais persistem, é hora de procurar ajuda.
-            </p>
-          </section>
-
-          <section class="artigo-secao-cuidado">
-            <h3 class="artigo-subtitulo">Como prevenir e cuidar</h3>
-
-            <p class="artigo-texto-paragrafo">
-              Algumas mudanças simples podem fazer diferença: respeitar seus
-              limites, equilibrar rotina entre trabalho e lazer, praticar
-              atividade física, cultivar vínculos sociais e, principalmente,
-              buscar apoio profissional. A psicoterapia é um espaço seguro para
-              compreender o que está acontecendo e desenvolver novas formas de
-              lidar com as pressões do dia a dia.
-            </p>
-
-            <p class="artigo-texto-paragrafo artigo-texto-final">
-              Lembre-se: burnout não é fraqueza, é um alerta do corpo e da mente
-              de que algo precisa mudar. Cuidar da
-              <strong>saúde mental</strong> é fundamental para ter mais
-              equilíbrio, energia e qualidade de vida.
-            </p>
-          </section>
-        </article>
-      </section>
-
+<section class="blog-lista">
+  <div id="blog-posts"></div>
+</section>
       <section class="faq" id="faq">
         <h2>Perguntas Frequentes</h2>
         <p>Tire suas dúvidas antes de começar sua jornada de autocuidado.</p>
@@ -248,7 +203,7 @@
       <section class="secao-contato-whatsapp" id="contato-whatsapp">
         <div class="coluna-imagem">
           <img
-            src="/src/img/contato.jpg"
+            src="/src/img/contato.JPEG"
             alt="Psicóloga Deise Cerqueira sorrindo, em sessão de atendimento online."
             class="imagem-principal"
             loading="lazy"
@@ -297,13 +252,13 @@
 
         <div class="coluna-navegacao">
           <h3 class="titulo-coluna">NAVEGAÇÃO</h3>
-          <ul class="lista-links">
+           <ul class="lista-links">
             <li><a href="/index.html">Início</a></li>
             <li><a href="/index.html#atuacao">Áreas de atuação</a></li>
-            <li><a href="/index.html#online">Atendimento online</a></li>
+            <li><a href="/index.html#temas">Temas Abordados</a></li>
             <li><a href="/index.html#sobre">Me conheça</a></li>
+            <li><a href="./src/html/blog.html">Blog</a></li>
             <li><a href="/index.html#contato">Contato</a></li>
-            <li><a href="/blog.html">Blog</a></li>
           </ul>
         </div>
 
@@ -361,11 +316,8 @@
 
       <div class="footer-faixa-legal">
         <p>
-          <a href="#">Política de Privacidade</a> |
-          <a href="#">Termos de Serviço</a> |
-          <a href="https://wa.me/+5511952808637"
-            >Atendimento exclusivamente online</a
-          >
+          <a href="/src/html/PolíticadePrivacidade.html">Política de Privacidade</a> |
+          <a href="/src/html/TermosdeServico.html">Termos de Serviço</a> |
         </p>
       </div>
 
@@ -378,6 +330,7 @@
         </p>
       </div>
     </footer>
+    <script type="module" src="/src/js/blog.js"></script>
     <script src="/src/js/script.js" defer></script>
       <script src="/src/js/menu.js" defer></script>
   </body>
