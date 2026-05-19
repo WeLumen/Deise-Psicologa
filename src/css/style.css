@@ -18,7 +18,6 @@
   --bg-card: #F8F8F8;
 }
 
-
 /* Reset básico */
 * {
   margin: 0;
@@ -977,18 +976,27 @@ footer {
 
 .bloco-redes {
   flex: 1;
+  min-width: 0;
   /* Menos espaço para redes sociais */
+}
+
+.link-instagram {
+  display: inline-flex;
+  max-width: 100%;
 }
 
 /* Estilização para a imagem do ícone do Instagram */
 .icone-instagram-img {
   width: 20px;
+  min-width: 20px;
+  flex: 0 0 20px;
   /* Largura do ícone (ajuste conforme necessário) */
-  height: auto;
+  height: 20px;
   /* Mantém a proporção da imagem */
+  object-fit: contain;
   vertical-align: middle;
   /* Ajuda a alinhar o ícone verticalmente com o texto */
-  margin-right: 8px;
+  margin-right: 0;
   /* Espaçamento entre o ícone e o texto "@DEISECERQUEIRA" */
   /* Você pode ajustar a cor do ícone se for SVG e quiser mudar via CSS,
        mas para PNG/JPG, a cor já está na imagem. */
@@ -1004,6 +1012,11 @@ footer {
   display: flex;
   /* Permite alinhar itens dentro do parágrafo */
   align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  min-width: 0;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
   /* Alinha verticalmente a imagem e o texto */
 }
 
@@ -1930,9 +1943,9 @@ footer {
     width: 100%;
   }
 
-  .bloco-redes img {
-    width: 28px;
-    height: 28px;
+  .bloco-redes .icone-instagram-img {
+    width: 20px;
+    height: 20px;
   }
 
   .lista-links a,
@@ -1940,7 +1953,6 @@ footer {
     font-size: 0.9em;
   }
 }
-
 /* Celulares pequenos */
 @media (max-width: 480px) {
   .navbar {
@@ -2169,9 +2181,9 @@ footer {
     width: 100%;
   }
 
-  .bloco-redes img {
-    width: 28px;
-    height: 28px;
+  .bloco-redes .icone-instagram-img {
+    width: 20px;
+    height: 20px;
   }
 
   .lista-links a,
@@ -2179,4 +2191,3 @@ footer {
     font-size: 0.9em;
   }
 }
- 
