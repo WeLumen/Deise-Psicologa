@@ -1,4 +1,5 @@
 import { client, urlFor } from '/src/js/sanity.js'
+import { toHTML } from 'https://esm.sh/@portabletext/to-html'
 
 const query = `*[_type == "post"] | order(publishedAt desc){
   title,
@@ -27,7 +28,9 @@ async function loadPosts() {
 
   posts.forEach(post => {
     const article = document.createElement('article')
+
     const text = bodyToText(post.body)
+    const htmlContent = toHTML(post.body)
 
     article.innerHTML = `
       <div class="blog-card">
@@ -50,7 +53,7 @@ async function loadPosts() {
           </div>
 
           <div class="content full-content" style="display:none;">
-            ${text}
+            ${htmlContent}
           </div>
 
           <button class="read-more">
