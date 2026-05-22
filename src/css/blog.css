@@ -27,7 +27,7 @@
   font-size: 32px;
   font-weight: 500;
 
-  color: #4f6348;
+  color: var(--title-color, #4A5D41);
 }
 
 .titulo-com-barra::before {
@@ -42,7 +42,7 @@
   width: 5px;
   height: 38px;
 
-  background: #4f6348;
+  background: var(--title-color, #4A5D41);
 }
 
 .blog-hero p {
@@ -53,10 +53,11 @@
 
   text-align: center;
 
+  font-family: "EB Garamond", serif;
   font-size: 18px;
   line-height: 1.8;
 
-  color: #6a665f;
+  color: var(--text-readable, #000000);
 }
 
 /* LISTA */
@@ -92,12 +93,26 @@
   transform: translateY(-5px);
 }
 
+.blog-post.expanded {
+  grid-column: 1 / -1;
+}
+
+.blog-post.expanded .blog-card {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.blog-post.expanded .full-content {
+  max-width: 760px;
+  margin: 20px auto 0;
+}
+
 .blog-card img {
   width: 100%;
   height: 320px;
 
   object-fit: contain;
-
   background: #f8f6f2;
 }
 
@@ -108,53 +123,78 @@
   flex-direction: column;
   align-items: center;
 
-  text-align: center;
+  font-family: "EB Garamond", serif;
 }
 
 .blog-card h2 {
+  font-family: "Cormorant SC", serif;
   font-size: 36px;
   line-height: 1.1;
+
+  text-align: center;
+  color: var(--title-color, #4A5D41);
+
+  overflow-wrap: anywhere;
 }
 
 .blog-card .content {
+  width: 100%;
   max-width: 100%;
-}
 
+  margin-top: 18px;
+
+  text-align: justify;
+  text-align-last: left;
+
+  line-height: 1.9;
+  letter-spacing: 0.1px;
+
+  word-break: normal;
+  overflow-wrap: normal;
+
+  hyphens: none;
+
+  color: var(--text-readable, #000000);
+
+  font-family: "Cormorant Infant", serif;
+  font-size: 18px;
+}
 
 /* CONTEÚDO COMPLETO */
 .full-content {
+  width: 100%;
   margin-top: 20px;
 
-  text-align: left;
+  text-align: justify;
+  text-align-last: left;
+
   line-height: 2;
+  letter-spacing: 0.1px;
+
+  word-break: normal;
+  overflow-wrap: normal;
+
+  hyphens: none;
+
+  color: var(--text-readable, #000000);
+
+  font-family: "Cormorant Infant", serif;
+  font-size: 19px;
 }
 
-.full-content p {
+.full-content p,
+.blog-card .content p {
   margin-bottom: 18px;
-}
 
-.full-content strong {
-  font-weight: 700;
-  color: #4f6348;
-}
+  text-align: justify;
+  text-align-last: left;
 
-.full-content em {
-  font-style: italic;
+  hyphens: none;
 }
-
-.full-content ul,
-.full-content ol {
-  margin: 18px 0;
-  padding-left: 25px;
-}
-
-.full-content li {
-  margin-bottom: 10px;
-}
-
 /* BOTÃO */
 .blog-card button,
-.read-more {
+.read-more,
+.blog-whatsapp-cta {
   margin-top: 25px;
 
   background: #a8be87;
@@ -173,19 +213,33 @@
 }
 
 .blog-card button:hover,
-.read-more:hover {
+.read-more:hover,
+.blog-whatsapp-cta:hover {
   background: #90a66f;
+}
+
+.blog-whatsapp-cta {
+  display: inline-block;
+  min-width: 190px;
+  margin: 18px auto 0;
+  padding: 11px 24px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 600;
 }
 
 /* RESPONSIVO */
 @media (max-width: 900px) {
   .blog-hero {
     margin: 50px auto 35px;
+    padding: 0 24px;
   }
 
-  .blog-card {
-    grid-template-columns: 1fr;
-    padding: 24px;
+  #blog-posts {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
   }
 
   .blog-card img {
@@ -193,37 +247,76 @@
   }
 
   .blog-card h2 {
-    font-size: 38px;
+    font-size: 32px;
   }
 
   .full-content {
-    text-align: center;
+    text-align: justify;
   }
 }
 
 @media (max-width: 600px) {
+  .blog-hero {
+    margin: 38px auto 28px;
+    padding: 0 18px;
+  }
+
   .titulo-com-barra {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .blog-hero p {
-    font-size: 17px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .blog-lista {
+    padding: 0 14px;
+  }
+
+  #blog-posts {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 32px;
   }
 
   .blog-card {
-    border-radius: 22px;
-    padding: 20px;
+    border-radius: 18px;
   }
 
   .blog-card img {
-    height: 230px;
+    height: 220px;
   }
 
   .blog-card h2 {
-    font-size: 32px;
+    font-size: 28px;
+  }
+
+  .blog-info {
+    padding: 24px 18px;
   }
 
   .blog-card .content {
     font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .full-content {
+    font-size: 17px;
+    line-height: 1.9;
+  }
+
+  .blog-card button,
+  .read-more {
+    width: 100%;
+    max-width: 260px;
+    padding: 13px 22px;
+  }
+
+  .blog-whatsapp-cta {
+    width: auto;
+    min-width: 180px;
+    max-width: 230px;
+    padding: 11px 20px;
   }
 }

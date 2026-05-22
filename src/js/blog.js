@@ -28,6 +28,7 @@ async function loadPosts() {
 
   posts.forEach(post => {
     const article = document.createElement('article')
+    article.classList.add('blog-post')
 
     const text = bodyToText(post.body)
     const htmlContent = toHTML(post.body)
@@ -54,6 +55,16 @@ async function loadPosts() {
 
           <div class="content full-content" style="display:none;">
             ${htmlContent}
+
+            <a
+              class="blog-whatsapp-cta"
+              href="https://wa.link/fzv4ck"
+              target="_blank"
+              rel="noopener noreferrer"
+              onclick="if (window.gtag) gtag('event', 'conversion', {'send_to': 'AW-17739277352/bdclCLyQhuQbEKjI34pC'});"
+            >
+              Falar no WhatsApp
+            </a>
           </div>
 
           <button class="read-more">
@@ -75,10 +86,12 @@ async function loadPosts() {
       const isOpen = fullContent.style.display === 'block'
 
       if (isOpen) {
+        article.classList.remove('expanded')
         fullContent.style.display = 'none'
         preview.style.display = 'block'
         button.textContent = 'Ler artigo'
       } else {
+        article.classList.add('expanded')
         fullContent.style.display = 'block'
         preview.style.display = 'none'
         button.textContent = 'Mostrar menos'

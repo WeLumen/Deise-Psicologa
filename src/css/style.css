@@ -13,6 +13,8 @@
   --bg-hero: #EDEDE4;
   --text-main: #2C2C2C;
   --text-secondary: #444444;
+  --text-readable: #000000;
+  --title-color: var(--btn-hover);
 
   --bg-card-icon: #E8E3D4;
   --bg-card: #F8F8F8;
@@ -173,14 +175,14 @@ header {
   font-size: 32px;
   font-weight: 450;
   line-height: 1.35;
-  color: var(--text-main);
+  color: var(--title-color);
   margin-bottom: 16px;
 }
 
 .hero-text p {
   font-family: 'Cormorant Infant', serif;
   font-size: 18px;
-  color: var(--text-secondary);
+  color: var(--text-readable);
   line-height: 1.8;
 }
 
@@ -315,7 +317,7 @@ header {
 .card h3 {
    font-size: 1.35rem;
   font-family: 'Cormorant Infant', serif;
-  color: var(--text-hover);
+  color: var(--title-color);
   margin-bottom: 14px;
 }
 
@@ -323,7 +325,7 @@ header {
   font-family: 'Cormorant Infant', serif;
   font-size: 1.05rem;
   line-height: 1.65;
-  color: var(--text-secondary);
+  color: var(--text-readable);
   text-align:center;
   margin-bottom: 1rem;
 }
@@ -368,7 +370,7 @@ header {
 .online-card h3 {
   font-size: 1.6rem;
   font-family: 'Cormorant Infant', serif;
-  color: var(--text-hover);
+  color: var(--title-color);
   margin-bottom: 15px;
 }
 
@@ -376,7 +378,7 @@ header {
   font-family: 'Cormorant Infant', serif;
   font-size: 1.3rem;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: var(--text-readable);
 }
 
 /* Temas Abordados */
@@ -405,7 +407,7 @@ header {
 .temas-label {
   font-size: 1.5rem;
   font-style: normal;
-  color: var(--text-hover);
+  color: var(--title-color);
   border-left: 4px solid var(--text-hover);
   padding-left: 8px;
   margin-bottom: 0;
@@ -416,18 +418,20 @@ header {
 .temas-intro {
   font-family: 'Cormorant Infant', serif;
   font-size: 1.2rem;
-  color: var(--text-secondary);
+  color: var(--text-readable);
   margin-bottom: 2rem;
   line-height: 1.8;
   max-width: 900px;
+  text-align: justify;
 }
 
 .temas-subtitle {
   font-family: 'Cormorant Infant', serif;
   font-size: 1.2rem;
-  color: var(--text-secondary);
+  color: var(--text-readable);
   margin-bottom: 1.5rem;
   font-weight: 600;
+  text-align: justify;
 }
 
 .temas-list ul {
@@ -440,11 +444,12 @@ header {
 .temas-list li {
   font-family: 'Cormorant Infant', serif;
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: var(--text-readable);
   margin-bottom: 1rem;
   line-height: 1.6;
   padding-left: 20px;
   position: relative;
+  text-align: justify;
 }
 
 .temas-list li:before {
@@ -458,11 +463,12 @@ header {
 .temas-closing {
   font-family: 'Cormorant Infant', serif;
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: var(--text-readable);
   margin-top: 2rem;
   line-height: 1.8;
   max-width: 900px;
   font-style: italic;
+  text-align: justify;
 }
 
 /* Sobre Mim */
@@ -507,7 +513,7 @@ header {
 
 .sobre-texto {
   flex: 1;
-  color: #2e2e2e;
+  color: var(--text-readable);
 }
 
 .sobre-texto .nome {
@@ -515,7 +521,7 @@ header {
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 20px;
-  color: var(--text-hover);
+  color: var(--title-color);
 }
 
 .sobre-texto p {
@@ -546,6 +552,7 @@ header {
   font-size: 34px;
   margin-bottom: 5px;
   position: relative;
+  color: var(--title-color);
 }
 
 .faq h2::before {
@@ -562,11 +569,13 @@ header {
 .faq-item {
   margin-bottom: 10px !important; /* reduz drasticamente o espaço entre uma FAQ e outra */
   padding-top: 0;
+  min-width: 0;
 }
 
 /* Pergunta da FAQ */
 .faq-question {
   width: 100%;
+  min-height: 82px;
   background-color: var(--bg-hero);
   border: none;
   border-radius: 10px;
@@ -579,18 +588,20 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background 0.3s, transform 0.2s;
+  gap: 16px;
+  line-height: 1.25;
+  transition: background 0.3s, box-shadow 0.2s;
 }
 
 .faq-question:hover {
   background-color: var(--bg-hero);
-  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 /* Resposta da FAQ */
 .faq p {
   font-size: 18px;
-  color: var(--btn-hover);
+  color: var(--text-readable);
    margin-top: 5px;
   margin-bottom: 5px;  text-align: left;
   font-family: 'Cormorant Infant', serif;
@@ -602,6 +613,7 @@ header {
 .faq-icon {
   width: 22px;
   height: 22px;
+  flex: 0 0 22px;
   transition: transform 0.3s;
 }
 
@@ -1103,7 +1115,7 @@ footer {
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0,0,0,0.05);
   line-height: 1.7;
-  color: var(--btn-hover);
+  color: var(--text-readable);
 }
 
 /* ===== TÍTULO PRINCIPAL ===== */
@@ -1113,7 +1125,7 @@ footer {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-family: "Cormorant SC", serif;
-  color: var(--text-hover);
+  color: var(--title-color);
 }
 
 /* ===== DATA DE ATUALIZAÇÃO ===== */
@@ -1122,7 +1134,7 @@ footer {
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: var(--btn-hover);
+  color: var(--text-readable);
 }
 
 /* ===== SUBTÍTULOS ===== */
@@ -1131,7 +1143,7 @@ footer {
   margin-top: 1.5rem;
   font-size: 1.2rem;
   font-family: "Cormorant SC", serif;
-  color: var(--text-hover);
+  color: var(--title-color);
 }
 
 /* ===== PARÁGRAFOS ===== */
@@ -1139,7 +1151,7 @@ footer {
 .privacy-policy p {
   margin-bottom: 1rem;
   font-size: 1rem;
-  color: var(--btn-hover);
+  color: var(--text-readable);
   font-family: "Cormorant Infant", serif;
 }
 
@@ -1604,6 +1616,7 @@ footer {
   }
 
   .faq-question {
+    min-height: 78px;
     padding: 16px 18px;
     font-size: 18px;
   }
@@ -1615,6 +1628,7 @@ footer {
   .faq-icon {
     width: 20px;
     height: 20px;
+    flex-basis: 20px;
   }
 
   .secao-contato-whatsapp {
@@ -2061,6 +2075,7 @@ footer {
   }
 
   .faq-question {
+    min-height: 86px;
     padding: 14px 16px;
     font-size: 17px;
   }
@@ -2072,6 +2087,7 @@ footer {
   .faq-icon {
     width: 18px;
     height: 18px;
+    flex-basis: 18px;
   }
 
    /*CONTATO*/
@@ -2189,5 +2205,504 @@ footer {
   .lista-links a,
   .link-contato {
     font-size: 0.9em;
+  }
+}
+
+/* Responsividade geral */
+img {
+  max-width: 100%;
+}
+
+.hero,
+.atuacao,
+.online,
+.temas,
+.sobre,
+.faq,
+.secao-contato-whatsapp {
+  overflow-x: clip;
+}
+
+.hero {
+  height: auto;
+  min-height: 760px;
+}
+
+.hero-container {
+  margin: 0 auto;
+}
+
+.cards {
+  width: 100%;
+}
+
+.card {
+  min-width: 0;
+}
+
+.card p,
+.temas-intro,
+.temas-subtitle,
+.temas-closing,
+.sobre-texto p,
+.faq p,
+.texto-chamada {
+  overflow-wrap: anywhere;
+}
+
+.sobre-imagem {
+  flex: 0 1 380px;
+}
+
+.sobre-imagem img {
+  width: 100%;
+  max-width: 380px;
+}
+
+.secao-contato-whatsapp {
+  width: min(92%, 860px);
+}
+
+.footer-principal-conteudo {
+  gap: 28px;
+}
+
+.coluna-logo,
+.coluna-navegacao,
+.coluna-contato,
+.bloco-redes {
+  min-width: 0;
+}
+
+.item-contato,
+.perfil-insta {
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 1201px) {
+  .hero-container {
+    grid-template-columns: minmax(420px, 0.9fr) minmax(480px, 1.1fr);
+  }
+
+  .card {
+    min-height: 520px;
+  }
+
+  .footer-principal-conteudo {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1.25fr 1fr;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container,
+  .navbar-content,
+  .footer-principal-conteudo {
+    max-width: 960px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-container {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.9fr);
+    gap: 28px;
+    padding: 48px 24px;
+  }
+
+  .hero-text {
+    padding-left: 0;
+  }
+
+  .hero-text h1 {
+    font-size: 30px;
+  }
+
+  .hero-text p {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .hero-image {
+    min-height: 520px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card {
+    min-height: 360px;
+  }
+
+  .footer-principal-conteudo {
+    flex-wrap: wrap;
+  }
+
+  .coluna-logo,
+  .coluna-navegacao,
+  .coluna-contato,
+  .bloco-redes {
+    flex: 1 1 220px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-content {
+    gap: 18px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .btn-consulta a {
+    padding: 9px 16px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    padding: 48px 24px 56px;
+  }
+
+  .hero-text {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .bemvindo-label {
+    align-self: center;
+  }
+
+  .hero-image {
+    min-height: 420px;
+    height: 420px;
+    max-width: 720px;
+    margin: 0 auto;
+    border-radius: 24px;
+  }
+
+  .hero-image::before {
+    background: linear-gradient(to bottom, rgba(237, 237, 228, 0.55), rgba(237, 237, 228, 0));
+  }
+
+  .temas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .temas-list ul {
+    column-count: 1;
+  }
+
+  .sobre-container {
+    align-items: flex-start;
+  }
+
+  .sobre-imagem {
+    flex-basis: 300px;
+  }
+
+  .sobre-imagem img {
+    max-width: 300px;
+    height: 430px;
+  }
+
+  .secao-contato-whatsapp {
+    max-width: 760px;
+  }
+
+  .coluna-conteudo {
+    padding: 36px 36px 36px 72px;
+  }
+
+  .icone-cerebro-fundo {
+    width: 112px;
+    height: 112px;
+  }
+
+  .texto-chamada,
+  .botao-whatsapp {
+    margin-left: 0;
+    padding-left: 58px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container,
+  .navbar-content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .navbar {
+    padding: 14px 0;
+  }
+
+  .nav-links {
+    width: min(82vw, 340px);
+    gap: 28px;
+    align-items: flex-start;
+    padding: 112px 28px 32px;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+  }
+
+  .btn-consulta {
+    display: none;
+  }
+
+  .logo {
+    height: 56px;
+  }
+
+  .logo img {
+    height: 96px;
+  }
+
+  .hero,
+  .atuacao,
+  .temas,
+  .sobre,
+  .faq {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-container {
+    padding: 42px 18px 48px;
+    gap: 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .hero-text p {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .hero-image {
+    height: 360px;
+    min-height: 360px;
+    border-radius: 20px;
+  }
+
+  .atuacao,
+  .temas,
+  .sobre {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+
+  .card {
+    min-height: 0;
+  }
+
+  .card p,
+  .sobre-texto p {
+    text-align: left;
+  }
+
+  .temas-intro,
+  .temas-subtitle,
+  .temas-closing {
+    margin-bottom: 0;
+  }
+
+  .temas-list li {
+    padding-left: 18px;
+  }
+
+  .sobre-container {
+    gap: 28px;
+  }
+
+  .sobre-imagem {
+    flex-basis: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .sobre-imagem img {
+    width: min(100%, 320px);
+    max-width: 320px;
+    height: 420px;
+  }
+
+  .faq-columns {
+    gap: 12px;
+  }
+
+  .faq-question {
+    min-height: 78px;
+  }
+
+  .secao-contato-whatsapp {
+    width: min(92%, 620px);
+    margin: 32px auto;
+  }
+
+  .coluna-imagem {
+    display: block;
+    height: 240px;
+  }
+
+  .coluna-conteudo {
+    padding: 32px 24px;
+  }
+
+  .icone-cerebro-fundo {
+    width: 92px;
+    height: 92px;
+  }
+
+  .texto-chamada,
+  .botao-whatsapp {
+    padding-left: 0;
+  }
+
+  .footer-principal-conteudo {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    padding: 24px 18px 40px;
+    text-align: center;
+  }
+
+  .coluna-logo,
+  .coluna-navegacao,
+  .coluna-contato,
+  .bloco-redes {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .coluna-navegacao ul {
+    gap: 8px 18px;
+  }
+
+  .item-contato,
+  .perfil-insta {
+    justify-content: center;
+  }
+
+  .footer-faixa-legal p,
+  .footer-copyright p {
+    padding: 0 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .container,
+  .navbar-content {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .nav-links {
+    width: min(86vw, 320px);
+  }
+
+  .hero-container {
+    padding: 34px 14px 42px;
+  }
+
+  .hero-text h1 {
+    font-size: 26px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .btn-hero,
+  .botao-whatsapp {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .hero-image {
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .atuacao,
+  .temas,
+  .sobre,
+  .faq {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .card {
+    padding: 18px 16px;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .card p,
+  .temas-intro,
+  .temas-subtitle,
+  .temas-list li,
+  .temas-closing,
+  .sobre-texto p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .sobre-imagem img {
+    height: 360px;
+  }
+
+  .faq h2 {
+    font-size: 25px;
+  }
+
+  .faq-question {
+    min-height: 92px;
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .faq p {
+    font-size: 15px;
+  }
+
+  .coluna-imagem {
+    height: 210px;
+  }
+
+  .coluna-conteudo {
+    padding: 28px 18px;
+  }
+
+  .titulo-conversar {
+    font-size: 1.45em;
+  }
+
+  .texto-chamada {
+    font-size: 1rem;
+  }
+
+  .footer-faixa-legal a {
+    display: inline-block;
+    padding: 4px 8px;
   }
 }
