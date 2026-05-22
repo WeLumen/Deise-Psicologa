@@ -72,13 +72,20 @@
 #blog-posts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: stretch;
   gap: 35px;
   margin-top: 50px;
+}
+
+.blog-post {
+  display: flex;
 }
 
 .blog-card {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-height: 650px;
 
   background: #fcfaf7;
   border-radius: 28px;
@@ -100,6 +107,7 @@
 .blog-post.expanded .blog-card {
   width: 100%;
   max-width: 920px;
+  min-height: 0;
   margin: 0 auto;
 }
 
@@ -109,11 +117,13 @@
 }
 
 .blog-card img {
-  width: 100%;
-  height: 320px;
+  width: calc(100% - 28px);
+  height: 250px;
+  margin: 14px 14px 0;
 
   object-fit: contain;
   background: #f8f6f2;
+  border-radius: 18px;
 }
 
 .blog-info {
@@ -122,19 +132,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
 
   font-family: "EB Garamond", serif;
 }
 
 .blog-card h2 {
   font-family: "Cormorant SC", serif;
-  font-size: 36px;
-  line-height: 1.1;
+  font-size: 31px;
+  line-height: 1.15;
 
   text-align: center;
   color: var(--title-color, #4A5D41);
 
   overflow-wrap: anywhere;
+}
+
+.blog-post:not(.expanded) .blog-card h2 {
+  min-height: calc(31px * 1.15 * 3);
+
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .blog-card .content {
@@ -158,6 +178,23 @@
 
   font-family: "Cormorant Infant", serif;
   font-size: 18px;
+}
+
+.blog-card .preview {
+  min-height: calc(18px * 1.7 * 4);
+  line-height: 1.7;
+
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+
+  text-align: center;
+  text-align-last: center;
+}
+
+.blog-post:not(.expanded) .read-more {
+  margin-top: auto;
 }
 
 /* CONTEÚDO COMPLETO */
@@ -243,7 +280,7 @@
   }
 
   .blog-card img {
-    height: 280px;
+    height: 230px;
   }
 
   .blog-card h2 {
@@ -282,14 +319,22 @@
 
   .blog-card {
     border-radius: 18px;
+    min-height: 560px;
   }
 
   .blog-card img {
-    height: 220px;
+    width: calc(100% - 20px);
+    height: 200px;
+    margin: 10px 10px 0;
+    border-radius: 14px;
   }
 
   .blog-card h2 {
     font-size: 28px;
+  }
+
+  .blog-post:not(.expanded) .blog-card h2 {
+    min-height: calc(28px * 1.15 * 3);
   }
 
   .blog-info {
@@ -299,6 +344,11 @@
   .blog-card .content {
     font-size: 17px;
     line-height: 1.8;
+  }
+
+  .blog-card .preview {
+    min-height: calc(17px * 1.65 * 4);
+    line-height: 1.65;
   }
 
   .full-content {

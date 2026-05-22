@@ -37,7 +37,7 @@ async function loadPosts() {
       <div class="blog-card">
 
         <img 
-          src="${urlFor(post.mainImage).width(900).url()}" 
+          src="${urlFor(post.mainImage).width(900).auto('format').quality(80).url()}" 
           alt="${post.title}"
         />
 
@@ -84,17 +84,26 @@ async function loadPosts() {
 
     button.addEventListener('click', () => {
       const isOpen = fullContent.style.display === 'block'
+      const allArticles = container.querySelectorAll('.blog-post')
 
       if (isOpen) {
         article.classList.remove('expanded')
         fullContent.style.display = 'none'
         preview.style.display = 'block'
         button.textContent = 'Ler artigo'
+        allArticles.forEach(postArticle => {
+          postArticle.style.display = ''
+        })
       } else {
         article.classList.add('expanded')
         fullContent.style.display = 'block'
         preview.style.display = 'none'
-        button.textContent = 'Mostrar menos'
+        button.textContent = 'Ler menos'
+        allArticles.forEach(postArticle => {
+          if (postArticle !== article) {
+            postArticle.style.display = 'none'
+          }
+        })
       }
     })
   })
