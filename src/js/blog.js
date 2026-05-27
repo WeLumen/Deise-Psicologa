@@ -58,7 +58,7 @@ async function loadPosts() {
 
             <a
               class="blog-whatsapp-cta"
-              href="https://wa.link/fzv4ck"
+              href="https://wa.me/5511952808637?text=Ol%C3%A1%2C%20Deise%21%20Conheci%20seu%20site%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20seu%20trabalho."
               target="_blank"
               rel="noopener noreferrer"
               onclick="if (window.gtag) gtag('event', 'conversion', {'send_to': 'AW-17739277352/bdclCLyQhuQbEKjI34pC'});"
