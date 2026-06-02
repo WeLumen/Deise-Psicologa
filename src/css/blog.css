@@ -53,7 +53,7 @@
 
   text-align: center;
 
-  font-family: "EB Garamond", serif;
+  font-family: "Cormorant SC", serif;
   font-size: 18px;
   line-height: 1.8;
 
@@ -81,6 +81,20 @@
   display: flex;
 }
 
+.blog-status {
+  grid-column: 1 / -1;
+  margin: 20px auto;
+  color: #4a5140;
+  font-family: "Cormorant Infant", serif;
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.blog-status.is-error {
+  color: #7a332b;
+}
+
 .blog-card {
   display: flex;
   flex-direction: column;
@@ -106,14 +120,14 @@
 
 .blog-post.expanded .blog-card {
   width: 100%;
-  max-width: 920px;
+  max-width: 900px;
   min-height: 0;
   margin: 0 auto;
 }
 
 .blog-post.expanded .full-content {
-  max-width: 760px;
-  margin: 20px auto 0;
+  max-width: 680px;
+  margin: 28px auto 0;
 }
 
 .blog-card img {
@@ -134,7 +148,7 @@
   align-items: center;
   flex: 1;
 
-  font-family: "EB Garamond", serif;
+  font-family: "Cormorant SC", serif;
 }
 
 .blog-card h2 {
@@ -163,21 +177,21 @@
 
   margin-top: 18px;
 
-  text-align: justify;
+  text-align: left;
   text-align-last: left;
 
-  line-height: 1.9;
-  letter-spacing: 0.1px;
+  line-height: 1.72;
+  letter-spacing: 0;
 
   word-break: normal;
-  overflow-wrap: normal;
+  overflow-wrap: anywhere;
 
   hyphens: none;
 
-  color: var(--text-readable, #000000);
+  color: #000000;
 
-  font-family: "Cormorant Infant", serif;
-  font-size: 18px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
 }
 
 .blog-card .preview {
@@ -189,8 +203,8 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 
-  text-align: center;
-  text-align-last: center;
+  text-align: left;
+  text-align-last: left;
 }
 
 .blog-post:not(.expanded) .read-more {
@@ -202,31 +216,77 @@
   width: 100%;
   margin-top: 20px;
 
-  text-align: justify;
+  text-align: left;
   text-align-last: left;
 
-  line-height: 2;
-  letter-spacing: 0.1px;
+  line-height: 1.78;
+  letter-spacing: 0;
 
   word-break: normal;
-  overflow-wrap: normal;
+  overflow-wrap: anywhere;
 
   hyphens: none;
 
-  color: var(--text-readable, #000000);
+  color: #262621;
 
   font-family: "Cormorant Infant", serif;
-  font-size: 19px;
+  font-size: 20px;
 }
 
 .full-content p,
 .blog-card .content p {
-  margin-bottom: 18px;
+  margin: 0 0 1.15em;
 
-  text-align: justify;
+  text-align: left;
   text-align-last: left;
 
   hyphens: none;
+}
+
+.full-content h2,
+.full-content h3,
+.full-content h4 {
+  margin: 1.7em 0 0.65em;
+  font-family: "Cormorant SC", serif;
+  line-height: 1.2;
+  color: var(--title-color, #4A5D41);
+}
+
+.full-content h2 {
+  font-size: 30px;
+}
+
+.full-content h3 {
+  font-size: 25px;
+}
+
+.full-content ul,
+.full-content ol {
+  margin: 0 0 1.25em;
+  padding-left: 1.35em;
+}
+
+.full-content li {
+  margin-bottom: 0.55em;
+  line-height: 1.72;
+}
+
+.full-content blockquote {
+  margin: 1.4em 0;
+  padding: 2px 0 2px 18px;
+  border-left: 4px solid #a8be87;
+  color: #4a5140;
+  font-style: italic;
+}
+
+.full-content a:not(.blog-whatsapp-cta) {
+  color: var(--title-color, #4A5D41);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.full-content > *:last-child {
+  margin-bottom: 0;
 }
 /* BOTÃO */
 .blog-card button,
@@ -288,7 +348,7 @@
   }
 
   .full-content {
-    text-align: justify;
+    text-align: left;
   }
 }
 
@@ -343,7 +403,7 @@
 
   .blog-card .content {
     font-size: 17px;
-    line-height: 1.8;
+    line-height: 1.7;
   }
 
   .blog-card .preview {
@@ -352,8 +412,16 @@
   }
 
   .full-content {
-    font-size: 17px;
-    line-height: 1.9;
+    font-size: 18px;
+    line-height: 1.72;
+  }
+
+  .full-content h2 {
+    font-size: 26px;
+  }
+
+  .full-content h3 {
+    font-size: 23px;
   }
 
   .blog-card button,
